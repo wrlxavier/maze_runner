@@ -92,8 +92,10 @@ bool walk(pos_t pos) {
 		// Verifica se a pilha de posições nao esta vazia 
 		//Caso não esteja, pegar o primeiro valor de  valid_positions, remove-lo e chamar a funçao walk com esse valor
 		// Caso contrario, retornar falso
-		pos_t next_position = valid_positions.top();
-		valid_positions.pop();
+		if (!valid_positions.empty()) {
+			pos_t next_position = valid_positions.top();
+			valid_positions.pop();
+		}
 	return false;
 }
 
