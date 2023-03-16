@@ -24,9 +24,11 @@ Aqui está um passo a passo de como usar o Codespaces para desenvolver a partir 
 
 2. Navegue até o repositório que deseja usar e clique no botão “Fork” no canto superior direito da página para criar uma cópia do repositório na sua conta do GitHub.
 
-3. Clique no botão “Code” e selecione “Open with Codespaces”.
+3. Clique no botão “Code” e selecione “Create codespace on main”.
 
-4. Selecione “New codespace” e aguarde enquanto o ambiente é configurado (pode demorar alguns minutos).
+4. Uma nova aba será aberta com a versão web do visual studio code contendo o seu projeto. Ao clicar no arquivo `maze_runner.cpp` um popup será aberto perguntando se voce deseja instalar as extensões para C/C++, responsa sim.
+
+5. Após a instalação da extensão, outro popup aparecerá para você escolher o compilador a ser usado (escolha o gcc).
 
 5. Quando o ambiente estiver pronto, você poderá começar a editar o código diretamente no navegador.
 
