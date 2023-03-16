@@ -97,7 +97,7 @@ void walk(post_t pos)
 
 int main(int argc, char* argv[])
 {
-	// carregar o labirinto com o nome do arquivo recebido como argumento (argv[])
+	// carregar o labirinto com o nome do arquivo recebido como argumento
 	pos_t initial_pos = load_maze(argv[1]);
 	walk(initial_pos);
 }
