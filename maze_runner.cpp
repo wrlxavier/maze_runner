@@ -69,7 +69,7 @@ void print_maze() {
 
 // Função responsável pela navegação.
 // Recebe como entrada a posição initial e retorna um booleando indicando se a saída foi encontrada
-boolean walk(pos_t pos) {
+bool walk(pos_t pos) {
 	
 	// Repita até que a saída seja encontrada ou não existam mais posições não exploradas
 		// Marcar a posição atual com o símbolo '.'
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
 	// carregar o labirinto com o nome do arquivo recebido como argumento
 	pos_t initial_pos = load_maze(argv[1]);
 	// chamar a função de navegação
-	boolean exit_found = walk(initial_pos);
+	bool exit_found = walk(initial_pos);
 	
 	// Tratar o retorno (imprimir mensagem)
 	
