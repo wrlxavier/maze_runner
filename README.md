@@ -10,7 +10,7 @@ O seu programa deve terminar:
 - caso a saída seja encontra;
 - caso não existam mais posições a serem exploradas.
 
-Antes de terminar, o seu programa deve imprimir o resultado da exploração (êxito ao encontrar a saída ou não). Caso tenha êxito, o programa deve imprimir a posição em que a saída foi encontrada (linha, coluna).
+Um esqueleto do código ilustrando as principais funções está disponível nesse repositório. Você não precisa seguir esse esqueleto, fique a vontade para modificá-lo.
 
 ### Codespaces
 
