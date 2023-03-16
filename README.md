@@ -16,7 +16,7 @@ O Codespaces é um recurso oferecido pelo GitHub que permite aos desenvolvedores
 
 Aqui está um passo a passo de como usar o Codespaces para desenvolver a partir de um repositório:
 
-1. Faça login na sua conta do GitHub. Caso não tenha uma conta, crie uma gratuitamente acessando este (link)[https://github.com/join]. 
+1. Faça login na sua conta do GitHub. Caso não tenha uma conta, crie uma gratuitamente acessando este [link](https://github.com/join). 
 
 2. Navegue até o repositório que deseja usar e clique no botão “Fork” no canto superior direito da página para criar uma cópia do repositório na sua conta do GitHub.
 
