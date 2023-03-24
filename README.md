@@ -12,6 +12,15 @@ O seu programa deve terminar:
 
 Um esqueleto do código ilustrando as principais funções está disponível nesse repositório. Você não precisa seguir esse esqueleto, fique a vontade para modificá-lo.
 
+## Exercício Computacional 2
+
+Neste exercício voces irao modificar o código gerado no exercício anterior de forma que, durante a exploração do labirinto, toda vez que seja encontrado mais de um possível caminho, a thread que está realizando a exploração, crie uma thread adicional para explorar cada um dos demais caminhos adicionais e  continue a explorar um destes.
+
+Ou seja, considere um cenário em que, durante a exploração existam dois caminhos possíveis a serem explorados, um dos caminhos deve ser explorado pela thread que está executando a função de exploração e uma thread adicional deve ser criada para explorar o outro caminho. 
+
+Vocês devem usar a biblioteca de threads padrão de C++ vista em sala de aula.
+
+
 ### Codespaces
 
 Vocês podem usar o [Github Codespaces](https://github.com/features/codespaces) como IDE.
