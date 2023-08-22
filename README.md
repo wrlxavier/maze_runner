@@ -40,7 +40,7 @@ Aqui está um passo a passo de como usar o Codespaces para desenvolver a partir 
 
 4. Uma nova aba será aberta com a versão web do visual studio code contendo o seu projeto. Ao clicar no arquivo `maze_runner.cpp` um popup será aberto perguntando se voce deseja instalar as extensões para C/C++, responda não.
 
-5. Após a instalação da extensão, outro popup aparecerá para você escolher o compilador a ser usado (escolha o gcc).
+5. Após esse passo, outro popup aparecerá para você escolher o compilador a ser usado (escolha o GCC 11).
 
 5. Quando o ambiente estiver pronto, você poderá começar a editar o código diretamente no navegador.
 
