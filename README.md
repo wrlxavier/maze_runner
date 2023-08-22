@@ -38,7 +38,7 @@ Aqui está um passo a passo de como usar o Codespaces para desenvolver a partir 
 
 3. Clique no botão “Code” e selecione “Create codespace on main”.
 
-4. Uma nova aba será aberta com a versão web do visual studio code contendo o seu projeto. Ao clicar no arquivo `maze_runner.cpp` um popup será aberto perguntando se voce deseja instalar as extensões para C/C++, responda sim.
+4. Uma nova aba será aberta com a versão web do visual studio code contendo o seu projeto. Ao clicar no arquivo `maze_runner.cpp` um popup será aberto perguntando se voce deseja instalar as extensões para C/C++, responda não.
 
 5. Após a instalação da extensão, outro popup aparecerá para você escolher o compilador a ser usado (escolha o gcc).
 
