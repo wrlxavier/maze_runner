@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stack>
+#include <stdlib.h>
 
 // Matriz de char representnado o labirinto
 char** maze; // Voce também pode representar o labirinto como um vetor de vetores de char (vector<vector<char>>)
@@ -40,19 +41,43 @@ pos_t load_maze(const char* file_name) {
 	pos_t initial_pos;
 	// Abre o arquivo para leitura (fopen)
 
+	FILE *file = fopen(file_name, "r");
+
+	if (file == NULL) {
+		initial_pos.i = -1;
+		initial_pos.j = -1;
+		return initial_pos;
+	}
+
 	// Le o numero de linhas e colunas (fscanf) 
 	// e salva em num_rows e num_cols
+	fscanf(file, "%d %d", &num_rows, &num_cols);
+
 
 	// Aloca a matriz maze (malloc)
+	maze = (char**)malloc(num_rows * sizeof(char*));
 	for (int i = 0; i < num_rows; ++i)
 		// Aloca cada linha da matriz
+		maze[i] = (char*)malloc(num_cols * sizeof(char)); 
 	
 	for (int i = 0; i < num_rows; ++i) {
 		for (int j = 0; j < num_cols; ++j) {
 			// Le o valor da linha i+1,j do arquivo e salva na posição maze[i][j]
+			char ch = fgetc(file);
+            while (ch == '\n') {
+                ch = fgetc(file);
+            }
+            maze[i][j] = ch;
 			// Se o valor for 'e' salvar o valor em initial_pos
+            if (ch == 'e') {
+                initial_pos.i = i;
+                initial_pos.j = j;
+            }
 		}
 	}
+
+	fclose(file);
+
 	return initial_pos;
 }
 
