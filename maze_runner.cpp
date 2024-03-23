@@ -1,6 +1,11 @@
+//Atividade realizada por: Warley Fernandes Xavier da Silva
+
 #include <stdio.h>
 #include <stack>
 #include <stdlib.h>
+
+#include <thread> // Para std::this_thread::sleep_for
+#include <chrono> // Para std::chrono::milliseconds
 
 // Matriz de char representnado o labirinto
 char** maze; // Voce também pode representar o labirinto como um vetor de vetores de char (vector<vector<char>>)
@@ -92,36 +97,51 @@ void print_maze() {
 }
 
 
+
+// Verifica se a posição é válida e não visitada
+bool isValid(int i, int j) {
+    return i >= 0 && i < num_rows && j >= 0 && j < num_cols && (maze[i][j] == 'x' || maze[i][j] == 's');
+}
+
+
 // Função responsável pela navegação.
 // Recebe como entrada a posição initial e retorna um booleando indicando se a saída foi encontrada
 bool walk(pos_t pos) {
-	
-	// Repita até que a saída seja encontrada ou não existam mais posições não exploradas
-		// Marcar a posição atual com o símbolo '.'
-		// Limpa a tela
-		// Imprime o labirinto
-		
-		/* Dado a posição atual, verifica quais sao as próximas posições válidas
-			Checar se as posições abaixo são validas (i>0, i<num_rows, j>0, j <num_cols)
-		 	e se são posições ainda não visitadas (ou seja, caracter 'x') e inserir
-		 	cada uma delas no vetor valid_positions
-		 		- pos.i, pos.j+1
-		 		- pos.i, pos.j-1
-		 		- pos.i+1, pos.j
-		 		- pos.i-1, pos.j
-		 	Caso alguma das posiçÕes validas seja igual a 's', retornar verdadeiro
-	 	*/
 
-		
-	
-		// Verifica se a pilha de posições nao esta vazia 
-		//Caso não esteja, pegar o primeiro valor de  valid_positions, remove-lo e chamar a funçao walk com esse valor
-		// Caso contrario, retornar falso
-		if (!valid_positions.empty()) {
-			pos_t next_position = valid_positions.top();
-			valid_positions.pop();
-		}
-	return false;
+
+// Se a posição atual é a saída, retorna verdadeiro
+    if (maze[pos.i][pos.j] == 's') {
+        return true;
+    }
+
+    maze[pos.i][pos.j] = 'o';
+
+
+	std::this_thread::sleep_for(std::chrono::milliseconds(20));
+	system("cls");
+    print_maze();
+    
+
+    pos_t next_positions[4] = {{pos.i, pos.j + 1}, {pos.i, pos.j - 1}, {pos.i + 1, pos.j}, {pos.i - 1, pos.j}};
+    for (auto& next_pos : next_positions) {
+        if (isValid(next_pos.i, next_pos.j)) {
+            valid_positions.push(next_pos); 
+        }
+    }
+
+    while (!valid_positions.empty()) {
+        pos_t next_pos = valid_positions.top();
+        valid_positions.pop();
+
+		maze[pos.i][pos.j] = '.';
+        
+        if (walk(next_pos)) {
+            return true;
+        }
+    }
+
+    return false;
+
 }
 
 int main(int argc, char* argv[]) {
@@ -129,8 +149,17 @@ int main(int argc, char* argv[]) {
 	pos_t initial_pos = load_maze(argv[1]);
 	// chamar a função de navegação
 	bool exit_found = walk(initial_pos);
-	
+
+	system("cls");
+	print_maze();
+
 	// Tratar o retorno (imprimir mensagem)
+	if (exit_found)
+	{
+		printf("\nSAIDA ENCONTRADA COM SUCESSO");
+	} else {
+		printf("NAO FOI POSSIVEL ENCONTRAR UMA SAIDA");
+	}
 	
 	return 0;
 }
