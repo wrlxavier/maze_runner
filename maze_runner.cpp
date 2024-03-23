@@ -118,7 +118,7 @@ bool walk(pos_t pos) {
 
 
 	std::this_thread::sleep_for(std::chrono::milliseconds(20));
-	system("cls");
+	system("clear");
     print_maze();
     
 
@@ -150,7 +150,7 @@ int main(int argc, char* argv[]) {
 	// chamar a função de navegação
 	bool exit_found = walk(initial_pos);
 
-	system("cls");
+	system("clear");
 	print_maze();
 
 	// Tratar o retorno (imprimir mensagem)
